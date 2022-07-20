@@ -37,8 +37,8 @@ or you can use "dotnet ef database update" in CLI.
 reference:https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli
 
 ## Startup Projects
-### Chat.Application.Web.Service
-### Chat.Application.Client
-### Chat.Application.Bot.Service
+#### Chat.Application.Web.Service
+#### Chat.Application.Client
+#### Chat.Application.Bot.Service
 
 ### Make sure rabbitmq is running and accepting connections on port 5672.
