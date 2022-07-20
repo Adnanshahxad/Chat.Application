@@ -26,7 +26,7 @@ public class StockController : ControllerBase
             return new HttpResponseMessage(HttpStatusCode.BadRequest)
             {
                 Content = new StringContent("Please provide a valid stock symbol."),
-                ReasonPhrase = "Invalid stockSymbol"
+                ReasonPhrase = "Invalid stock symbol"
             };
         }
         try
