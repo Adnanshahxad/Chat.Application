@@ -1,0 +1,68 @@
+﻿@model Domain.Models.RegisterViewModel
+
+@{
+    ViewBag.Title = "Register";
+}
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+    <fieldset>
+
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @if (ViewBag.Message != null)
+        {
+            <div style="border: 1px solid red">
+                @ViewBag.Message
+            </div>
+        }
+
+        @if (ViewBag.ErrorMessage != null)
+        {
+            <div style="border: 1px solid red">
+                @ViewBag.ErrorMessage
+            </div>
+        }
+        <table style="margin: auto;">
+
+            <tr>
+                <td>@Html.LabelFor(a => a.Name)</td>
+                <td>@Html.TextBoxFor(a => a.Name)</td>
+                <td>@Html.ValidationMessageFor(a => a.Name)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(a => a.Email)</td>
+                <td>@Html.TextBoxFor(a => a.Email)</td>
+                <td>@Html.ValidationMessageFor(a => a.Email)</td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(a => a.Password)
+                </td>
+                <td>
+                    @Html.PasswordFor(a => a.Password)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(a => a.Password)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(a => a.ConfirmPassword)
+                </td>
+                <td>
+                    @Html.PasswordFor(a => a.ConfirmPassword)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(a => a.ConfirmPassword)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Register"/>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+}
